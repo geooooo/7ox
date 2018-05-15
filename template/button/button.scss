@@ -1,0 +1,38 @@
+@import '../base/general.scss';
+
+
+$border-width: 6px;
+
+
+.button {
+    position: relative;
+
+    border-right-width: $border-width;
+    border-bottom-width: $border-width;
+    padding: 10px 15px;
+
+    color: lighten($colorFront, 35%);
+    font-family: 'Sans-Serif';
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    border-radius: 10px;
+    border-style: solid;
+    border-right-color:  darken($colorFront, 10%);
+    border-bottom-color: darken($colorFront, 15%);
+    background-color: $colorFront;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        left: $border-width;
+        top: $border-width;
+        border-bottom-width: 0;
+        border-right-width: 0;
+        /*
+            NOTE: если рядом другие элемены
+            margin-right: $border-width;
+            margin-bottom: $border-width;
+        */
+    }
+}

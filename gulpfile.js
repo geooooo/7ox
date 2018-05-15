@@ -4,34 +4,36 @@ var dart = require('gulp-dart');
 
 
 var PATHS = {
-    scss: [/*TODO:*/],
-    dart: [/*TODO:*/],
+    scss: [
+        'template/**/*.scss',
+    ],
+    // dart: [/*TODO:*/],
 };
 
 
 gulp.task('compile-scss', function () {
     return gulp.src(PATHS.scss)
                .pipe(scss({
-                    /*TODO:*/
+                    outputStyle: 'expanded',
                }))
                .pipe(gulp.dest(function (file) {
-                   return file.base.replace(//*TODO:*/$/, 'build');
-                }));
-});
-
-
-gulp.task('compile-dart', function () {
-    return gulp.src(PATHS.ts)
-               .pipe(dart({
-                    /*TODO:*/
-               }))
-               .pipe(gulp.dest(function (file) {
-                   return file.base.replace(//*TODO:*/$/, 'build');
+                    return file.base;
                }));
 });
 
 
+// gulp.task('compile-dart', function () {
+//     return gulp.src(PATHS.ts)
+//                .pipe(dart({
+//                     /*TODO:*/
+//                }))
+//                .pipe(gulp.dest(function (file) {
+//                    return file.base.replace(//*TODO:*/$/, 'build');
+//                }));
+// });
+
+
 gulp.task('compile', function () {
     gulp.watch(PATHS.scss, gulp.series('compile-scss'));
-    gulp.watch(PATHS.dart, gulp.series('compile-dart'));
+    // gulp.watch(PATHS.dart, gulp.series('compile-dart'));
 });
