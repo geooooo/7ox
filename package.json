@@ -1,0 +1,10 @@
+{
+  "name": "7ox",
+  "author": "Iurii Kornienko",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-dart": "^0.2.4",
+    "gulp-sass": "^4.0.1"
+  }
+}
