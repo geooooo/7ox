@@ -1,0 +1,53 @@
+@import '../base/general.scss';
+@import '../button/button.scss';
+@import '../label/label.scss';
+
+
+.dialog-window-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+
+.shadow {
+    position: absolute;
+    z-index: 2;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.dialog-window {
+    position: relative;
+    z-index: 3;
+
+    border-top-width: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    height: 100px;
+
+    text-align: center;
+
+    border-style: solid;
+    border-radius: 4px;
+    border-top-color: $colorFront;
+    background-color: $colorBack;
+}
+
+
+.dialog-window__label {
+    margin-bottom: 30px;
+    color: $colorFontLight;
+}
+
+
+.dialog-window__button {}
