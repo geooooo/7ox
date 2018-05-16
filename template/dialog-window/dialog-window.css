@@ -341,8 +341,6 @@ body,
 html {
   height: 100%;
   background-color: #a2a0b1;
-  padding: 5px;
-  /* DEBUG: */
   overflow: hidden;
 }
 
@@ -689,8 +687,6 @@ body,
 html {
   height: 100%;
   background-color: #a2a0b1;
-  padding: 5px;
-  /* DEBUG: */
   overflow: hidden;
 }
 
@@ -1067,8 +1063,6 @@ body,
 html {
   height: 100%;
   background-color: #a2a0b1;
-  padding: 5px;
-  /* DEBUG: */
   overflow: hidden;
 }
 
