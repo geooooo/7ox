@@ -352,10 +352,6 @@ html {
   align-items: center;
 }
 
-.color-picker__label {
-  padding-right: 10px;
-}
-
 .color-picker__value {
   margin-right: 10px;
   border-width: 2px;

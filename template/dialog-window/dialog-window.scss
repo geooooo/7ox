@@ -3,7 +3,7 @@
 @import '../label/label.scss';
 
 
-.dialog-window-container {
+.dialog-window {
     position: relative;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@
 }
 
 
-.shadow {
+.dialog-window__shadow {
     position: absolute;
     z-index: 2;
 
@@ -24,7 +24,7 @@
 }
 
 
-.dialog-window {
+.dialog-window__content {
     position: relative;
     z-index: 3;
 
