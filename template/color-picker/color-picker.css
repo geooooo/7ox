@@ -362,6 +362,7 @@ html {
   color: #eee;
   border-color: #647687;
   border-style: solid;
+  border-radius: 4px;
   transition-duration: 0.2s;
   transition-property: border-color;
   transition-timing-function: easy-out;

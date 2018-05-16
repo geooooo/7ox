@@ -359,6 +359,7 @@ html {
   background-color: #647687;
   border-color: #647687;
   border-style: solid;
+  border-radius: 4px;
   color: #eee;
   transition-duration: 0.2s;
   transition-property: border-color;
