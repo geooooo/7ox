@@ -4,7 +4,8 @@
 $colorMainBackground: #a2a0b1;
 $colorFront: #2ecc71;
 $colorBack: #647687;
-$colorFont: #2c3e50;
+$colorFontDark: #2c3e50;
+$colorFontLight: #eee;
 
 
 * {
@@ -19,4 +20,5 @@ html {
     height: 100%;
     background-color: $colorMainBackground;
     padding: 5px;   /* DEBUG: */
+    overflow: hidden;
 }

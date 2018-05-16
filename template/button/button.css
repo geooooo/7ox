@@ -343,6 +343,7 @@ html {
   background-color: #a2a0b1;
   padding: 5px;
   /* DEBUG: */
+  overflow: hidden;
 }
 
 .button {
@@ -359,9 +360,10 @@ html {
   border-bottom-color: #25a25a;
   background-color: #2ecc71;
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
   transition-property: top, border-bottom-width;
   transition-timing-function: ease-out;
+  margin-bottom: 0;
 }
 
 .button:hover {
@@ -371,4 +373,5 @@ html {
 .button:active {
   top: 8px;
   border-bottom-width: 0;
+  margin-bottom: 8px;
 }
