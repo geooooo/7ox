@@ -1,0 +1,21 @@
+@import '../base/general.scss';
+@import '../label/label.css';
+
+
+.level-picker {
+  display: flex;
+  align-items: center;
+}
+
+
+.level-picker__label {
+  padding-right: 10px;
+}
+
+
+.level-picker__select {
+  background-color: $colorBack;
+  color: $colorFontLight;
+}
+
+
