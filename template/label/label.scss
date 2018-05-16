@@ -1,0 +1,11 @@
+@import "../base/general.scss";
+
+
+$font-color: $colorFont;
+
+
+.label {
+    font-family: 'Courier';
+    font-weight: bold;
+    color: $font-color;
+}
