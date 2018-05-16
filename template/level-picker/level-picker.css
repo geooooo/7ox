@@ -353,10 +353,24 @@ html {
 }
 
 .level-picker__label {
-  padding-right: 10px;
+  margin-right: 10px;
 }
 
 .level-picker__select {
+  border-width: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 30px;
+  font-family: 'Courier';
   background-color: #647687;
+  border-color: #647687;
+  border-style: solid;
   color: #eee;
+  transition-duration: 0.2s;
+  transition-property: border-color;
+  transition-timing-function: easy-out;
+}
+
+.level-picker__select:focus {
+  border-color: #2ecc71;
 }

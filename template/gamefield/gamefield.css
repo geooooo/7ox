@@ -367,7 +367,11 @@ html {
   transition-timing-function: linear;
 }
 
-.gamefield__cell:active {
+.gamefield__cell[class~='gamefield__cell_empty']:hover {
+  background-color: #7e8fa0;
+}
+
+.gamefield__cell[class~='gamefield__cell_empty']:active {
   border-radius: 100%;
   background-color: #5faee3;
 }

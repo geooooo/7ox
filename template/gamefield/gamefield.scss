@@ -30,11 +30,18 @@ $colorUser: #3498db;
     transition-property: background-color, border-radius;
     transition-timing-function: linear;
 
-    &:active {
+    &[class~='gamefield__cell_empty']:hover {
+        background-color: lighten($colorBack, 10%);
+    }
+
+    &[class~='gamefield__cell_empty']:active {
         border-radius: 100%;
         background-color: lighten($colorUser, 10%);
     }
 }
+
+
+.gamefield__cell_empty {}
 
 
 .gamefield__cell_ai {
