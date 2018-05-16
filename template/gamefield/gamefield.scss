@@ -1,0 +1,47 @@
+@import "../base/general.scss";
+
+
+$colorAI: #9b59b6;
+$colorUser: #3498db;
+
+
+.gamefield {
+    display: table;
+    border-collapse: collapse;
+
+    background-color: $colorBack;
+    cursor: pointer;
+}
+
+
+.gamefield__row {
+    display: table-row;
+}
+
+
+.gamefield__cell {
+    display: table-cell;
+
+    border: 2px solid $colorFontDark;
+    padding: 30px;
+
+    border-radius: 0;
+    transition-duration: 0.2s;
+    transition-property: background-color, border-radius;
+    transition-timing-function: linear;
+
+    &:active {
+        border-radius: 100%;
+        background-color: lighten($colorUser, 10%);
+    }
+}
+
+
+.gamefield__cell_ai {
+    background-color: $colorAI;
+}
+
+
+.gamefield__cell_user {
+    background-color: $colorUser;
+}
