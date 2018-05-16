@@ -1,13 +1,14 @@
 @import '../base/general.scss';
 
 
-$border-width: 6px;
+$border-width: 8px;
+$border-radius: 20px;
 
 
 .button {
     position: relative;
+    top: 0;
 
-    border-right-width: $border-width;
     border-bottom-width: $border-width;
     padding: 10px 15px;
 
@@ -16,23 +17,21 @@ $border-width: 6px;
     font-weight: bold;
     font-size: 1.5rem;
 
-    border-radius: 10px;
+    border-radius: $border-radius;
     border-style: solid;
-    border-right-color:  darken($colorFront, 10%);
-    border-bottom-color: darken($colorFront, 15%);
+    border-bottom-color: darken($colorFront, 10%);
     background-color: $colorFront;
     cursor: pointer;
+    transition-duration: 0.3s;
+    transition-property: top, border-bottom-width;
+    transition-timing-function: ease-out;
 
-    &:hover,
+    &:hover {
+        color: lighten($colorFront, 40%);
+    }
+
     &:active {
-        left: $border-width;
         top: $border-width;
         border-bottom-width: 0;
-        border-right-width: 0;
-        /*
-            NOTE: если рядом другие элемены
-            margin-right: $border-width;
-            margin-bottom: $border-width;
-        */
     }
 }
