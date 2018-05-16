@@ -1,0 +1,160 @@
+<link rel='stylesheet' href='app.css'>
+
+<div class="main">
+
+    <div class="main__top-bar">
+        <button class='button'>≡ Меню</button>
+    </div>
+
+    <div class="main__content">
+        <div class='gamefield'>
+            <div class='gamefield__row'>
+                <div class='gamefield__cell gamefield__cell_ai'></div>
+                <div class='gamefield__cell gamefield__cell_ai'></div>
+                <div class='gamefield__cell gamefield__cell_ai'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+            </div>
+
+            <div class='gamefield__row'>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_user'></div>
+                <div class='gamefield__cell gamefield__cell_user'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+            </div>
+
+            <div class='gamefield__row'>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+            </div>
+
+            <div class='gamefield__row'>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+            </div>
+
+            <div class='gamefield__row'>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+            </div>
+
+            <div class='gamefield__row'>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+            </div>
+
+            <div class='gamefield__row'>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+                <div class='gamefield__cell gamefield__cell_empty'></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main__info info">
+        <div class="info__level label">Сложность: Средний</div>
+        <div class="info__step label">Ход: AI</div>
+    </div>
+
+</div>
+
+
+<!-- menu -->
+
+
+<div class='menu animate animate_fast animate_down'>
+
+    <div class='menu__form'>
+        <div class='menu__row'>
+            <div class='menu__cell'>
+                <div class='label'>Выберите цвет AI:</div>
+            </div>
+            <div class='menu__cell'>
+                <div class='color-picker'>
+                    <input class='color-picker__value' type='text' value='#ff22d1'>
+                    <div class='color-picker__color'></div>
+                </div>
+            </div>
+        </div>
+
+        <div class='menu__row'>
+            <div class='menu__cell'>
+                <div class='label'>Выберите цвет игрока:</div>
+            </div>
+            <div class='menu__cell'>
+                <div class='color-picker'>
+                    <input class='color-picker__value' type='text' value='#ff22d1'>
+                    <div class='color-picker__color'></div>
+                </div>
+            </div>
+        </div>
+
+        <div class='menu__row'>
+            <div class='menu__cell'>
+                <div class='level-picker__label label'>Уровень сложности:</div>
+            </div>
+            <div class='menu__cell'>
+                <div class='level-picker'>
+                    <select class='level-picker__select'>
+                        <option>Глупый</option>
+                        <option>Лёгкий</option>
+                        <option selected>Средний</option>
+                        <option>Сложный</option>
+                        <option>Умный</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu__buttons">
+            <button class='button'>↻ Начать заново</button>
+            <button class='button'>☰ Назад</button>
+    </div>
+
+</div>
+
+
+<!-- dialog-window -->
+
+
+<div class='dialog-window animate animate_long animate_up'>
+    <div class='dialog-window__shadow animate animate_fast animate_hide'></div>
+    <div class='dialog-window__content'>
+        <div class='dialog-window__label label'>
+            Сообщение в окне
+        </div>
+        <button class="dialog-window__button button">Ок</button>
+    </div>
+</div>
+
+
