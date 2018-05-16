@@ -1,0 +1,33 @@
+@import "../base/general.scss";
+
+
+.section {
+    display: flex;
+    padding: 15px;
+}
+
+
+.section_center {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.section_column {
+    flex-direction: column;
+
+    & > * {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+
+.section_row {
+    flex-direction: row;
+
+    & > * {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
