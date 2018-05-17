@@ -3,3 +3,6 @@
 **/__pycache__
 node_modules
 package-lock.json
+app7ox/.packages
+app7ox/pubspec.lock
+app7ox/.pub
