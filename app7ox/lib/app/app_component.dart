@@ -64,9 +64,16 @@ class AppComponent implements OnInit {
   @ViewChild('menu')
   ElementRef menu;
 
+/*
+
+FIXME: при изменении настроек какая-то хрень
+FIXME: при появлении окна тень почему-то не исчезает иногда
+TODO:  дописать привязку к backend
+
+*/
+
   @override
   void ngOnInit() {
-    showWinner();
     colorPickerAI.setColor(colorAI);
     colorPickerUser.setColor(colorUser);
     levelPicker.setLevel(level);
@@ -85,18 +92,17 @@ class AppComponent implements OnInit {
 
   void stepAI() {
     var field = gamefield.getCells();
-    print(field);
-    // TODO: to backend
-    // gamefield.setCellXY(0, 0);
-    if (new Random().nextInt(2) == 0) {
-      dialogWindow.message = message_win_ai;
+    // print(field);
+    // gamefield.setCellXY(0, 0, colorAI);
+    // if (new Random().nextInt(2) == 0) {
+      // dialogWindow.message = message_win_ai;
       showWinner();
-    }
+    // }
     step = 'User';
   }
 
   void onClickGamefield(Event event) {
-    if (gamefield.setCell(event.target)) {;
+    if (gamefield.setCell(event.target, colorUser)) {;
       step = 'AI';
       stepAI();
     }
@@ -115,13 +121,13 @@ class AppComponent implements OnInit {
   }
 
   void showWinner() {
-    dialogWindow.show();
     shadow.show();
+    dialogWindow.show();
   }
 
   void hideWinner() {
-    dialogWindow.hide();
     shadow.hide();
+    dialogWindow.hide();
   }
 
   void showMenu() {
@@ -136,6 +142,9 @@ class AppComponent implements OnInit {
     colorAINew = colorAI;
     colorUserNew = colorUser;
     levelNew = level;
+    print(colorAINew);
+    print(colorUserNew);
+    print(levelNew);
     var _menu = menu.nativeElement;
     _menu.classes.remove('animate_down');
     _menu.classes.add('animate');

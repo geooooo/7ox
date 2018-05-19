@@ -17,6 +17,7 @@ class DialogWindowComponent {
 
   void show() {
     var _main = main.nativeElement as HtmlElement;
+    _main.parent.style.top = '0';
     _main.parent.style.display = 'block';
     _main.classes.remove('animate_up');
     _main.classes.add('animate');
@@ -29,6 +30,7 @@ class DialogWindowComponent {
     new Timer(const Duration(milliseconds: 500), () {
       _main.parent.style.display = 'none';
     });
+    _main.parent.style.top = '-100%';
     _main.classes.remove('animate_down');
     _main.classes.add('animate');
     _main.classes.add('animate_up');

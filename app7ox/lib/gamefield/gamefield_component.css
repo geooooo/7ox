@@ -375,9 +375,9 @@ html {
 }
 
 .gamefield__cell_ai {
-  background-color: #9b59b6;
+  /* background-color: #9b59b6; */
 }
 
 .gamefield__cell_user {
-  background-color: #3498db;
+  /* background-color: #3498db; */
 }
