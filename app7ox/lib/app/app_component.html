@@ -1,0 +1,51 @@
+<div class="app">
+
+    <div class="main">
+        <div class="main__top-bar">
+            <press-button>≡ Меню</press-button>
+        </div>
+        <div class="main__content">
+            <gamefield #gamefield></gamefield>
+        </div>
+        <div class="main__info info">
+            <label-yellow #labelLevel>Сложность: null</label-yellow>
+            <label-green #labelStep>Ход: null</label-green>
+        </div>
+    </div>
+
+    <dialog-window>null</dialog-window>
+
+    <div class='menu'>
+        <div class='menu__form'>
+            <div class='menu__row'>
+                <div class='menu__cell'>
+                    <label-dark>Выберите цвет AI:</label-dark>
+                </div>
+                <div class='menu__cell'>
+                    <color-picker #colorAI></color-picker>
+                </div>
+            </div>
+            <div class='menu__row'>
+                <div class='menu__cell'>
+                    <label-dark>Выберите цвет игрока:</label-dark>
+                </div>
+                <div class='menu__cell'>
+                    <color-picker #colorUser></color-picker>
+                </div>
+            </div>
+            <div class='menu__row'>
+                <div class='menu__cell'>
+                    <label-dark>Уровень сложности:</label-dark>
+                </div>
+                <div class='menu__cell'>
+                    <level-picker #level></level-picker>
+                </div>
+            </div>
+        </div>
+        <div class="menu__buttons">
+            <press-button>↻ Начать заново</press-button>
+            <press-button>☰ Назад</press-button>
+        </div>
+    </div>
+
+</div>
