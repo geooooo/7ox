@@ -5,7 +5,7 @@
             <press-button (click)='showMenu()'>≡ Меню</press-button>
         </div>
         <div class="main__content">
-            <gamefield #gamefield></gamefield>
+            <gamefield (click)='onClickGamefield($event)' #gamefield></gamefield>
         </div>
         <div class="main__info info">
             <label-yellow>Сложность: {{ level }}</label-yellow>

@@ -1,4 +1,5 @@
 import 'dart:html';
+import 'dart:math';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import '../press_button/press_button_component.dart';
@@ -33,8 +34,6 @@ class AppComponent implements OnInit {
 
   static const message_win_ai = 'Победил AI !';
   static const message_win_user = 'Победил Игрок !';
-  static const message_step_ai = 'AI';
-  static const message_step_user = 'Игрок';
 
   String level = 'Средний';
   String levelNew = 'Средний';
@@ -67,9 +66,40 @@ class AppComponent implements OnInit {
 
   @override
   void ngOnInit() {
+    showWinner();
     colorPickerAI.setColor(colorAI);
     colorPickerUser.setColor(colorUser);
     levelPicker.setLevel(level);
+    gamefield.clear();
+    initGame();
+  }
+
+  void initGame() {
+    if (new Random().nextInt(2) == 0) {
+      step = 'AI';
+      stepAI();
+    } else {
+      step = 'User';
+    }
+  }
+
+  void stepAI() {
+    var field = gamefield.getCells();
+    print(field);
+    // TODO: to backend
+    // gamefield.setCellXY(0, 0);
+    if (new Random().nextInt(2) == 0) {
+      dialogWindow.message = message_win_ai;
+      showWinner();
+    }
+    step = 'User';
+  }
+
+  void onClickGamefield(Event event) {
+    if (gamefield.setCell(event.target)) {;
+      step = 'AI';
+      stepAI();
+    }
   }
 
   void onChangeLevel(String value) {
@@ -117,7 +147,8 @@ class AppComponent implements OnInit {
     colorAI = colorAINew;
     colorUser = colorUserNew;
     level = levelNew;
-    // TODO:
+    gamefield.clear();
+    initGame();
     hideMenu();
   }
 

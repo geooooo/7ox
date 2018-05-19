@@ -14,6 +14,7 @@ class ShadowComponent {
 
   void show() {
     var _main = main.nativeElement as HtmlElement;
+    _main.classes.remove('animate_hide');
     _main.style.display = 'block';
     _main.classes.add('animate');
     _main.classes.add('animate_show');
@@ -23,6 +24,7 @@ class ShadowComponent {
 
   void hide() {
     var _main = main.nativeElement as HtmlElement;
+    _main.classes.remove('animate_show');
     _main.classes.add('animate');
     _main.classes.add('animate_hide');
     _main.classes.add('animate_fast');
