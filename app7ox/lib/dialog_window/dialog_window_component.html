@@ -1,9 +1,9 @@
-<div class='dialog-window'>
+<div #main class='dialog-window'>
     <div class='dialog-window__content'>
         <div class='dialog-window__label label'>
-            <ng-content></ng-content>
+            {{ message }}
         </div>
-        <button class="dialog-window__button button">Ок</button>
+        <button (click) class="dialog-window__button button">Ок</button>
     </div>
 </div>
 

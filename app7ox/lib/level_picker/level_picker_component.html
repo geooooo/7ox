@@ -1,5 +1,5 @@
 <div class='level-picker'>
-    <select class='level-picker__select'>
+    <select #select (change)='onChange($event.target.value)' class='color-picker__value' class='level-picker__select'>
         <option>Глупый</option>
         <option>Лёгкий</option>
         <option>Средний</option>

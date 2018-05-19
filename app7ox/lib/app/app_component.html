@@ -2,27 +2,29 @@
 
     <div class="main">
         <div class="main__top-bar">
-            <press-button>≡ Меню</press-button>
+            <press-button (click)='showMenu()'>≡ Меню</press-button>
         </div>
         <div class="main__content">
             <gamefield #gamefield></gamefield>
         </div>
         <div class="main__info info">
-            <label-yellow #labelLevel>Сложность: null</label-yellow>
-            <label-green #labelStep>Ход: null</label-green>
+            <label-yellow>Сложность: {{ level }}</label-yellow>
+            <label-green>Ход: {{ step }}</label-green>
         </div>
     </div>
 
-    <dialog-window>null</dialog-window>
+    <shadow #shadow></shadow>
 
-    <div class='menu'>
+    <dialog-window #dialogWindow (click)='hideWinner()'></dialog-window>
+
+    <div #menu class='menu'>
         <div class='menu__form'>
             <div class='menu__row'>
                 <div class='menu__cell'>
                     <label-dark>Выберите цвет AI:</label-dark>
                 </div>
                 <div class='menu__cell'>
-                    <color-picker #colorAI></color-picker>
+                    <color-picker #colorPickerAI (change)='onChangeColorAI($event)'></color-picker>
                 </div>
             </div>
             <div class='menu__row'>
@@ -30,7 +32,7 @@
                     <label-dark>Выберите цвет игрока:</label-dark>
                 </div>
                 <div class='menu__cell'>
-                    <color-picker #colorUser></color-picker>
+                    <color-picker #colorPickerUser (change)='onChangeColorUser($event)'></color-picker>
                 </div>
             </div>
             <div class='menu__row'>
@@ -38,13 +40,13 @@
                     <label-dark>Уровень сложности:</label-dark>
                 </div>
                 <div class='menu__cell'>
-                    <level-picker #level></level-picker>
+                    <level-picker #levelPicker (change)='onChangeLevel($event)'></level-picker>
                 </div>
             </div>
         </div>
         <div class="menu__buttons">
-            <press-button>↻ Начать заново</press-button>
-            <press-button>☰ Назад</press-button>
+            <press-button (click)='resetGame()'>↻ Начать заново</press-button>
+            <press-button (click)='hideMenu()'>☰ Назад</press-button>
         </div>
     </div>
 
