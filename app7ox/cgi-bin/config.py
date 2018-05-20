@@ -9,9 +9,9 @@ from bottle import (
 TEMPLATE_PATH.insert(0, f"{os.getcwd()}/web/")
 
 RUN_ARGS = {
-    'debug': True,
     'reloader': True,
     'port': 8080,
+    'debug': True,
 }
 
 

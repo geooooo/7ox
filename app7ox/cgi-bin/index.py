@@ -9,7 +9,7 @@ import step_ai
 
 @get('/')
 def index():
-    template('index.html')
+    return template('index.html')
 
 
 run(**config.RUN_ARGS)
