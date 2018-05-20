@@ -95,7 +95,7 @@ TODO:  дописать привязку к backend
     // gamefield.setCellXY(0, 0, colorAI);
     // if (new Random().nextInt(2) == 0) {
       // dialogWindow.message = message_win_ai;
-      // showWinner();
+      showWinner();
     // }
     step = 'User';
   }

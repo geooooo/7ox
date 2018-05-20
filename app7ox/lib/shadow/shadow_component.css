@@ -1,3 +1,7 @@
+:host {
+  display: none;
+}
+
 .shadow {
     display: none;
     position: fixed;
