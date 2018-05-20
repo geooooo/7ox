@@ -1,5 +1,7 @@
 import 'dart:html';
+import 'dart:async';
 import 'dart:math';
+import 'dart:convert';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import '../press_button/press_button_component.dart';
@@ -64,13 +66,6 @@ class AppComponent implements OnInit {
   @ViewChild('menu')
   ElementRef menu;
 
-/*
-
-FIXME: при появлении окна тень почему-то не исчезает иногда
-TODO:  дописать привязку к backend
-
-*/
-
   @override
   void ngOnInit() {
     colorPickerAI.setColor(colorAI);
@@ -89,14 +84,24 @@ TODO:  дописать привязку к backend
     }
   }
 
-  void stepAI() {
-    var field = gamefield.getCells();
-    // print(field);
-    // gamefield.setCellXY(0, 0, colorAI);
-    // if (new Random().nextInt(2) == 0) {
-      // dialogWindow.message = message_win_ai;
+  Future stepAI() async {
+    final url = '/step_ai';
+    final data = <String,String>{
+      'field': JSON.encode(gamefield.getCells()),
+      'level': level,
+    };
+    dynamic response = await HttpRequest.postFormData(url, data);
+    response = JSON.decode(response);
+    if (response['x'] != -1) {
+      gamefield.setCellXY(response['x'], response['y'], colorAI);
+    }
+    if (response['win'] == 'AI') {
+      dialogWindow.message = message_win_ai;
       showWinner();
-    // }
+    } else if (response['win'] == 'User') {
+      dialogWindow.message = message_win_user;
+      showWinner();
+    }
     step = 'User';
   }
 
