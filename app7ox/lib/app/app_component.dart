@@ -91,24 +91,24 @@ class AppComponent implements OnInit {
       'level': level,
     };
     dynamic response = await HttpRequest.postFormData(url, data);
-    response = JSON.decode(response);
-    if (response['x'] != -1) {
-      gamefield.setCellXY(response['x'], response['y'], colorAI);
-    }
-    if (response['win'] == 'AI') {
-      dialogWindow.message = message_win_ai;
-      showWinner();
-    } else if (response['win'] == 'User') {
-      dialogWindow.message = message_win_user;
-      showWinner();
-    }
+    // response = JSON.decode(response);
+    // if (response['x'] != -1) {
+    //   gamefield.setCellXY(response['x'], response['y'], colorAI);
+    // }
+    // if (response['win'] == 'AI') {
+    //   dialogWindow.message = message_win_ai;
+    //   showWinner();
+    // } else if (response['win'] == 'User') {
+    //   dialogWindow.message = message_win_user;
+    //   showWinner();
+    // }
     step = 'User';
   }
 
   void onClickGamefield(Event event) {
     if (gamefield.setCell(event.target, colorUser)) {;
       step = 'AI';
-      stepAI();
+      // stepAI();
     }
   }
 
