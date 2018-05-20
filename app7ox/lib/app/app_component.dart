@@ -66,7 +66,6 @@ class AppComponent implements OnInit {
 
 /*
 
-FIXME: при изменении настроек какая-то хрень
 FIXME: при появлении окна тень почему-то не исчезает иногда
 TODO:  дописать привязку к backend
 
@@ -96,7 +95,7 @@ TODO:  дописать привязку к backend
     // gamefield.setCellXY(0, 0, colorAI);
     // if (new Random().nextInt(2) == 0) {
       // dialogWindow.message = message_win_ai;
-      showWinner();
+      // showWinner();
     // }
     step = 'User';
   }
@@ -142,9 +141,9 @@ TODO:  дописать привязку к backend
     colorAINew = colorAI;
     colorUserNew = colorUser;
     levelNew = level;
-    print(colorAINew);
-    print(colorUserNew);
-    print(levelNew);
+    colorPickerAI.setColor(colorAI);
+    colorPickerUser.setColor(colorUser);
+    levelPicker.setLevel(level);
     var _menu = menu.nativeElement;
     _menu.classes.remove('animate_down');
     _menu.classes.add('animate');
