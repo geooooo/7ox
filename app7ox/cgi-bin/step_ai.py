@@ -1,4 +1,6 @@
 import json
+import base64
+from urllib.parse import unquote as urldecode
 from bottle import (
     post,
     request,
@@ -7,8 +9,10 @@ from bottle import (
 
 @post('/step_ai')
 def step_ai():
-    print(request.forms.get('field'))
-    print(request.forms.get('level'))
+    level = urldecode(request.POST['level'])
+    field = request.POST['field']
+    print(field)
+    print(level)
     return json.dumps({
         'x': 0,
         'y': 0,

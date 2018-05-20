@@ -6,7 +6,7 @@ from bottle import (
 )
 
 
-TEMPLATE_PATH.insert(0, f"{os.getcwd()}/web/")
+TEMPLATE_PATH.insert(0, f"{os.getcwd()}/views/web/")
 
 RUN_ARGS = {
     'reloader': True,
@@ -17,4 +17,4 @@ RUN_ARGS = {
 
 @route("/<filename:path>")
 def server_static_file(filename):
-    return static_file(filename, root=f"{os.getcwd()}/web/")
+    return static_file(filename, root=f"{os.getcwd()}/views/web/")

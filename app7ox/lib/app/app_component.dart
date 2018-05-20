@@ -86,29 +86,35 @@ class AppComponent implements OnInit {
 
   Future stepAI() async {
     final url = '/step_ai';
+    final headers = <String,String>{
+      'Content-Type': 'text/plain;charset=utf8',
+    };
     final data = <String,String>{
       'field': JSON.encode(gamefield.getCells()),
-      'level': level,
+      'level': Uri.encodeFull(level),
     };
-    dynamic response = await HttpRequest.postFormData(url, data);
-    // response = JSON.decode(response);
-    // if (response['x'] != -1) {
-    //   gamefield.setCellXY(response['x'], response['y'], colorAI);
-    // }
-    // if (response['win'] == 'AI') {
-    //   dialogWindow.message = message_win_ai;
-    //   showWinner();
-    // } else if (response['win'] == 'User') {
-    //   dialogWindow.message = message_win_user;
-    //   showWinner();
-    // }
+    dynamic response = await HttpRequest.postFormData(
+      url, data,
+      requestHeaders: headers
+    );
+    response = JSON.decode(response.responseText);
+    if (response['x'] != -1) {
+      gamefield.setCellXY(response['x'], response['y'], colorAI);
+    }
+    if (response['win'] == 'AI') {
+      dialogWindow.message = message_win_ai;
+      showWinner();
+    } else if (response['win'] == 'User') {
+      dialogWindow.message = message_win_user;
+      showWinner();
+    }
     step = 'User';
   }
 
   void onClickGamefield(Event event) {
     if (gamefield.setCell(event.target, colorUser)) {;
       step = 'AI';
-      // stepAI();
+      stepAI();
     }
   }
 
