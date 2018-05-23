@@ -1,0 +1,53 @@
+<div class="app">
+
+    <div class="main">
+        <div class="main__top-bar">
+            <press-button (click)='showMenu()'>≡ Меню</press-button>
+        </div>
+        <div class="main__content">
+            <gamefield (click)='onClickGamefield($event)' #gamefield></gamefield>
+        </div>
+        <div class="main__info info">
+            <label-yellow>Сложность: {{ level }}</label-yellow>
+            <label-green>Ход: {{ step }}</label-green>
+        </div>
+    </div>
+
+    <shadow #shadow></shadow>
+
+    <dialog-window #dialogWindow (click)='hideWinner()'></dialog-window>
+
+    <div #menu class='menu'>
+        <div class='menu__form'>
+            <div class='menu__row'>
+                <div class='menu__cell'>
+                    <label-dark>Выберите цвет AI:</label-dark>
+                </div>
+                <div class='menu__cell'>
+                    <color-picker #colorPickerAI (change)='onChangeColorAI($event)'></color-picker>
+                </div>
+            </div>
+            <div class='menu__row'>
+                <div class='menu__cell'>
+                    <label-dark>Выберите цвет игрока:</label-dark>
+                </div>
+                <div class='menu__cell'>
+                    <color-picker #colorPickerUser (change)='onChangeColorUser($event)'></color-picker>
+                </div>
+            </div>
+            <div class='menu__row'>
+                <div class='menu__cell'>
+                    <label-dark>Уровень сложности:</label-dark>
+                </div>
+                <div class='menu__cell'>
+                    <level-picker #levelPicker (change)='onChangeLevel($event)'></level-picker>
+                </div>
+            </div>
+        </div>
+        <div class="menu__buttons">
+            <press-button (click)='resetGame()'>↻ Начать заново</press-button>
+            <press-button (click)='hideMenu()'>☰ Назад</press-button>
+        </div>
+    </div>
+
+</div>
