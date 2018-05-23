@@ -154,10 +154,94 @@ def is_empty_cell(x, y, field):
 
 
 def ai_ultasha(field):
-    return 0, 0
+    def check_max(y, x, flag):
+        nonlocal field
+        sum = 0
+        i = 1
+        while x + i < 7:
+            if field[y][x + i] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        i = 1
+        while x - i >= 0:
+            if field[y][x - i] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        i = 1
+        while y + i < 7:
+            if field[y + i][x] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        i = 1
+        while y - i >= 0:
+            if field[y - i][x] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        i = 1
+        while x + i < 7 and y + i < 7:
+            if field[y + i][x + i] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        i = 1
+        while x - i >= 0 and y - i >= 0:
+            if field[y - i][x - i] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        i = 1
+        while x - i >= 0 and y + i < 7:
+            if field[y + i][x - i] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        i = 1
+        while x + i < 7 and y - i >= 0:
+            if field[y - i][x + i] != flag:
+                sum += 5 ** i
+                break
+            else:
+                i += 1
+        return sum
 
+    x = -1,
+    y = -1
+    if field[3][3] == FLAG_EMPTY:
+        return 3, 3
+    maxi = -1
+    for r in range(7):
+        for c in range(7):
+            if field[r][c] != FLAG_EMPTY:
+                continue
+            max = check_max(r, c, FLAG_AI)
+            min = check_max(r, c, FLAG_USER)
+            if max + min > maxi:
+                print(r, c)
+                maxi = max + min
+                y = r
+                x = c
+    return x, y
 
 def step(level, field):
+    x = -1
+    y = -1
+    if get_win(field) == 'User':
+        return {
+            'x': x,
+            'y': y,
+            'win': 'User',
+        }
     if random() * 10 > level * 10:
         while True:
             x = randint(0, 6)
@@ -166,12 +250,12 @@ def step(level, field):
                 break
     else:
         x, y = ai_ultasha(field)
-    field[y][x] = FLAG_AI
-    win = get_win(field)
+        if x != -1:
+            field[y][x] = FLAG_AI
     return {
         'x': x,
         'y': y,
-        'win': win,
+        'win': get_win(field),
     }
 
 
